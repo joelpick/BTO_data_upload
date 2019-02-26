@@ -120,17 +120,6 @@ BTO_ringing_upload <- function(data, display=FALSE){
 		if(display) remDr$screenshot(display = TRUE)		
 		cat(i," ")
 
-		# Colour_mark_info_box$sendKeysToElement(list(data$Colour_Mark_Info[i]))
-		
-		# Save_button <- remDr$findElement(using = 'css selector', ".btn-primary")
-		# Save_button$clickElement()
 	}
 }
-
-# for(i in 1:2014)
-# if(i %in% (floor(1209/10)*(1:9))) cat(which(i == (floor(1209/10)*(1:9)))*10, "% ", sep="")
-
-# i=600
-
-# i %in% (floor(1209/10)*(1:9))
 
