@@ -108,10 +108,15 @@ BTO_ringing_upload <- function(data, display=FALSE){
 		Capture_method_box <- remDr$findElement(using = 'css selector', ".chosenFieldSetup:nth-child(32) .dataInput")
 		Capture_method_box$sendKeysToElement(list(data$Capture_Method[i]))
 
-		Ringer_initials_box <- remDr$findElement(using = 'css selector', ".chosenFieldSetup:nth-child(34) .ui-autocomplete-input")
-		Ringer_initials_box$clearElement()
-		Ringer_initials_box$sendKeysToElement(list(data$Ringer_Initials[i]))
-
+		if(data$Record_Type[i]=="N"){
+			Ringer_initials_box <- remDr$findElement(using = 'css selector', ".chosenFieldSetup:nth-child(34) .ui-autocomplete-input")
+			Ringer_initials_box$clearElement()
+			Ringer_initials_box$sendKeysToElement(list(data$Ringer_Initials[i]))
+		}else{
+			Processor_initials_box <- remDr$findElement(using = 'css selector', ".chosenFieldSetup:nth-child(36) .ui-autocomplete-input")
+			Processor_initials_box$clearElement()
+			Processor_initials_box$sendKeysToElement(list(data$Ringer_Initials[i]))
+		}
 
 		## to save - press tab on the colour mark info box!!
 		Colour_mark_info_box <- remDr$findElement(using = 'css selector', "td:nth-child(56) .dataInput")
